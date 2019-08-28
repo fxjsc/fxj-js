@@ -1,0 +1,12 @@
+{
+    "navigationBarTitleText": "预订车辆",
+    "enablePullDownRefresh": false,
+    "navigationBarBackgroundColor": "#31A7EB",
+    "usingComponents":{
+        "upload":"../../component/upload/upload",
+        "day":"../../component/day/day",
+         "footer": "../../component/footer/footer"
+  
+    }
+
+}

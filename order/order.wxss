@@ -1,0 +1,339 @@
+
+/* 轮播 */
+.orders{
+  padding-bottom: 130rpx;
+}
+swiper {
+    height: 533rpx;
+  
+  }
+  swiper-item image {
+      width: 750rpx;
+      height: 533rpx;
+  }
+  
+  swiper .wx-swiper-dot{
+      border-radius: 50%;
+      width: 25rpx;
+      height: 25rpx;
+      background: rgba(0,0,0,0);
+      margin-bottom: 40rpx;
+      border: 1px solid rgb(42, 122, 198);
+      margin: 0 15rpx 130rpx;
+      
+  }
+  swiper .wx-swiper-dot-active{
+      background: white;
+      border-color: white;
+}
+
+/* 表单 */
+.submit_list{
+    position: relative;
+}
+.width_700{
+    width: 700rpx;
+     padding: 20rpx 0;
+}
+
+.about_car{
+    position: absolute;
+    top: -104rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20rpx 0;
+
+
+}
+.car_items{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 602rpx;
+    margin: auto;
+    padding: 25rpx 0;
+    border-bottom: 1px solid rgb(238, 238, 238);
+
+}
+.car_items:last-child{
+    border-bottom: none;
+}
+
+.car_items .item_cont{
+    display: flex;
+    flex:3.8;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+
+}
+.item_cont input{
+  font-size: 25rpx;
+  width: 95rpx;
+}
+.car_items .item_cont text{
+    color: #252525;
+    font-size: 30rpx;
+    /* transform: translateY(-1rpx) */
+}
+.car_items .item_cont label, .car_items .item_cont picker .main_text{
+
+    color: #030303;
+    font-size: 25rpx;
+}
+.car_items .item_cont:first-child{
+    flex: 6;
+}
+.text-right{
+    justify-content: flex-end !important;
+}
+.red{
+    color: #fd0202 !important;
+}
+.car_items .item_cont picker{
+  margin-left: 20rpx;
+  width: 49%;
+  position: relative;
+}
+.car_items .item_cont picker image{
+    width: 18rpx;
+    height: 10rpx;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.about_car,.about_thing,.borders{
+    box-shadow:0 0 3px #878383;
+    background: white;
+    border-radius: 20rpx;
+}
+.about_thing{
+  
+    margin: 348rpx auto 0;
+   
+}
+.opact{
+    opacity: 0;
+}
+.flex_new{
+    width: 55% !important;
+
+}
+.flex_new text{
+    vertical-align: text-top;
+}
+.flex_new  image{
+    /* right: -10rpx !important; */
+}
+.flex-1{
+    flex:6 !important;
+}
+.flex-1 picker{
+    width: 62% !important;
+}
+.borders{
+   margin:25rpx auto;
+}
+.border-none{
+    border-bottom: none ;
+}
+
+.shops{
+    display: flex;
+  
+    justify-content: flex-start;
+    margin-bottom: 50rpx;
+    align-items:center;
+}
+.font-25{
+    font-size: 25rpx; 
+    margin-top: 1rpx;
+}
+.checkboxgroup{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+
+}
+checkbox{
+    margin-right: 5rpx;
+}
+checkbox .wx-checkbox-input{
+    
+    width: 32rpx;
+    height: 32rpx;
+}
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+
+    color: #468CF4;
+    
+}
+
+.text_shop{
+    /* vertical-align: middle; */
+    margin-left: 8rpx;
+  
+}
+.zy{
+    font-size: 25rpx;
+    color: #000000;
+}
+.border-none .item_cont{
+    justify-content: space-between;
+}
+.text_hs{
+    color: #a8a4a4;
+    font-size: 25rpx;
+}
+.memu{
+
+    font-size: 25rpx;
+    color: #252525;
+     
+
+}
+.car_items .memu:nth-child(2){
+  width: 23%;
+}
+.car_items .memu{
+  
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    
+
+}
+.car_items .memu:nth-child(2){
+  
+    display: flex;
+    justify-content: flex-start;
+    width: 23%;
+    text-align: left;
+}
+.others{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 70%;
+}
+.outborder{
+    padding: 7rpx 18rpx;
+    background: rgb(238, 238, 238);
+    border-radius: 20rpx;
+    margin-bottom: 10rpx;
+    margin-right: 5rpx;
+
+}
+.font-30{
+    font-size: 30rpx;
+    color: #060606;
+}
+.news navigator{
+    position: relative;
+    height: 110rpx;
+}
+.news navigator image{
+    
+     width: 705rpx;
+     height: 110rpx;
+     margin-left: -1rpx;
+}
+.news navigator label{
+    color: white;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 34rpx;
+    font-size: 30rpx;
+}
+.borders:last-child{
+    padding-bottom: 0;
+    margin-bottom: 30rpx;
+}
+.sc{
+    width: 132rpx;
+    height: 132rpx;
+    margin-right: 10rpx;
+}
+.flex_left{
+    justify-content: flex-start !important;
+    flex-wrap: wrap;
+}
+.width_300{
+    width: 300rpx !important;
+}
+.width_500{
+    width: 365rpx !important;
+    flex: auto !important;
+}
+.days picker{
+  transform: translateY(-2rpx)
+}
+.whites .wx-checkbox-input.wx-checkbox-input-checked::before{
+    color:white !important;
+}
+.last .shops:last-child {
+  display: none !important;
+}
+.shopping{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+ .jh{
+    width:60rpx;
+    height: 30rpx;
+    line-height:29rpx;
+    text-align: center;
+    border: 1px solid #31A7EB;
+    font-size: 20rpx;
+    margin: 0 10rpx 0 15rpx;
+    background: #31A7EB;
+    color: white;
+    position: absolute;
+    right: 0;
+    top: 5rpx;
+    z-index: 1
+}
+.font_18{
+  font-size: 18rpx;
+  position: absolute;
+  right: -36rpx;
+  bottom: -31rpx;
+}
+.tx{
+  animation: as 1.5s infinite;
+}
+
+@keyframes as {
+0% {
+-webkit-transform: translateX(-10rpx);
+transform:  translateX(-10rpx);
+}
+50% {
+-webkit-transform:  translateX(10rpx);
+transform:  translateX(10rpx);
+}
+100% {
+-webkit-transform:  translateX(-10rpx);
+transform:  translateX(-10rpx);
+}
+}
+/* .about_car */
+.flex_start{
+  justify-content: flex-start;
+  align-items: center;
+}
+.fonts{
+  font-size: 18rpx;
+}
+.padding_10{
+  padding: 0 0 5rpx;
+  transform: translateY(-10rpx)
+}
+.bz_input{
+  /* transform: translateY(10rpx) */
+}
+

@@ -1,0 +1,168 @@
+<view class="orders">
+    <!-- 轮播 -->
+    <swiper indicator-dots="true" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="true">
+        <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+            <navigator url="{{item.url}}" hover-class="none">
+                <swiper-item>
+                    <image src="{{item.icon}}" class="slide-image" width="100%" />
+                </swiper-item>
+            </navigator>
+        </block>
+    </swiper>
+    <!-- 表单 -->
+    <view class="submit_list">
+        <view class="about_car width_700">
+            <view class="car_items">
+                <view class="item_cont width_500">
+                    <text>车型：</text>
+                    <picker value="{{date}}" bindchange="bindDateChange0" range="{{car.content}}" class="width_300">
+                        <text>{{car.content[car.index]}}</text>
+                    </picker>
+                </view>
+                <view class="item_cont text-right">
+                    <text class="red">￥{{allprices}}/车</text>
+                </view>
+            </view>
+            <view class="car_items">
+                <view class="width_500">
+                    <!-- <day bind:start="start" bind:end="end" class="days"></day> -->
+                     <view class='box'>
+            <navigator url='./../calendar/index' hover-class="none">
+              <label class='indate'>日期区间:{{checkInDate}}至{{checkOutDate}}</label>
+            </navigator>
+          </view>
+                </view>
+            </view>
+            <view class="car_items">
+                <view class="item_cont" wx:for="{{list1}}" wx:key="{{index}}">
+                    <label>{{item.name}}:</label>
+                    <picker mode="{{item.mode}}" value="{{date}}" id="{{item.id}}" bindchange="bindDateChange1" range="{{item.content}}">
+                        <view class="main_text">{{item.content[item.index]}}</view>
+                        <image src="{{ urls}}fxhs.png" />
+                    </picker>
+                </view>
+            </view>
+            <view class="car_items">
+                <view class="item_cont" wx:for="{{list2}}" wx:key="{{index}}">
+                    <label>{{item.name}}:</label>
+                    <picker mode="{{item.mode}}" value="{{item.index}}" id="{{item.id}}" bindchange="bindDateChange2" range="{{item.content}}">
+                        <view class="main_text">{{item.content[item.index]}}</view>
+                        <image src="{{ urls}}fxhs.png" />
+                    </picker>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 后续表单 -->
+    <view class="about_thing width_700">
+        <view class="car_items">
+            <view class="item_cont">
+                <text>团队性质：</text>
+                <picker value="{{list3.content[list3.index]}}" range="{{list3.content}}" id="{{list3.id}}" bindchange="bindDateChange3" disabled="{{disabled}}" class="flex_new">
+                    <text>{{list3.content[list3.index]}}(返：￥{{list3.pri[list3.index]}})</text>
+                    <image src="{{ urls}}fxhs.png" />
+                </picker>
+            </view>
+        </view>
+        <view class="car_items">
+            <view class="item_cont flex-1">
+                <label>客源地：</label>
+                <picker value="{{list4.content[list4.index]}}" range="{{list4.content}}" id="{{list4.id}}" bindchange="bindDateChange3">
+                    <view class="main_text">{{list4.content[list4.index]}}(返：￥{{list4.pri[list4.index]}})</view>
+                    <image src="{{ urls}}fxhs.png" />
+                </picker>
+            </view>
+            <view class="item_cont">
+                <label>人数：</label>
+                <input type="text" placeholder="1"  bindinput="renshu"/>
+            </view>
+        </view>
+    </view>
+    <!-- 购物店 -->
+    <view class="about_shop borders width_700">
+        <view class="car_items  border-none">
+            <view class="item_cont">
+                <text>购物店</text>
+            </view>
+        </view>
+        <view class="car_items">
+            <checkbox-group id="{{item.id}}" bindchange="checkboxChange" class="checkboxgroup">
+
+            <!-- <view class="[{{hash == 0 ? '':'last'}},shopping]"> -->
+                <label class=" shops" wx:for="{{items}}" wx:key="{{index}}">
+                    <checkbox value="{{item.name}}{{item.money}}C{{item.id}}"  checked="{{item.checked}}"  disabled="{{item.disabled}}" class="{{item.color }}" />
+                    <view class="font-25">{{item.value}}</view>
+                    <view class="text_shop font-25">
+                        返(
+                        <text class="red">¥{{item.money}}</text>
+                        )
+                    </view>
+                </label>
+                <!-- </view> -->
+            </checkbox-group>
+        </view>
+        <view class="car_items">
+            <view class="zy">注：最多只可以选4项，并且小于21周岁不算返利人群</view>
+        </view>
+    </view>
+    <!-- 合同 -->
+    <view class="about_shop borders width_700">
+        <upload bindmy="my">
+            <text slot="top">合同行程</text>
+            <view class="text_hs" slot="bottom">图片大小（1000kb以内）</view>
+            <view class="text_hs  border-none" slot="git"></view>
+        </upload>
+        <view class="car_items border-none">
+            <view class=" text_hs">注： 如有特殊行程请联系客服</view>
+        </view>
+    </view>
+    <!-- 订单详情 -->
+    <view class="about_shop borders width_700">
+        <view class="car_items  border-none">
+            <view class="item_cont">
+                <text>订单详情</text>
+            </view>
+        </view>
+        <view class="car_items">
+            <view class="memu">{{car.content[car.index]}}{{list1[0].content[list1[0].index]}}</view>
+            <view class="memu red">￥{{allprices}}</view>
+        </view>
+        <view class="car_items">
+            <view class="memu">{{list3.content[list3.index]}}</view>
+            <view class="memu red">返:￥{{list3.pri[list3.index]}}</view>
+        </view>
+        <view class="car_items">
+            <view class="memu">客源地（{{list4.content[list4.index]}}）</view>
+            <view class="memu red">返:￥{{list4.pri[list4.index]}}</view>
+        </view>
+        <view class="car_items">
+            <view class="others">
+                <view class="memu">
+                    <view class="outborder" wx:for="{{shoplists.content}}" wx:key="{{index}}">
+                        {{item}}
+                    </view>
+                </view>
+            </view>
+            <view class="memu red">返:￥{{shoplists.money}}</view>
+        </view>
+        <view class="car_items border-none">
+            <view class="font-30">返利总额</view>
+            <view class="memu red font-30">￥{{allfh}}</view>
+        </view>
+         <view class="car_items flex_start padding_10">
+            <view class="fonts">备注：</view>
+            <view ><input type="text" placeholder="输入想输入的备注" class="fonts bz_input"/></view>
+        </view>
+        <view class="car_items border-none">
+            <view class="font-30">应付总额</view>
+            <view class="memu red font-30">￥{{allprices}}</view>
+        </view>
+        <view class="news">
+            <navigator hover-class="none" bindtap="sure">
+                <image src="{{urls}}carqr.png" />
+                <label>确认预约</label>
+            </navigator>
+        </view>
+    </view>
+</view>
+<footer></footer>
